@@ -15,7 +15,7 @@ config = context.config
 try:
     config.set_main_option("sqlalchemy.url", f"postgresql+psycopg2://{settings.database_username}:{settings.database_password}\
                             @{settings.database_hostname}:{settings.database_port}/{settings.database_name}?sslmode=require")
-    print(f"Using database: {settings.database_hostname}:{settings.database_port} with user {settings.database_username}")
+    print(f"Using database: {settings.database_hostname}:{settings.database_port} with user {settings.database_username} and password {settings.database_password}")
 except Exception as e:
     print(f"Error setting up the database URL in Alembic: {str(e)}")
     raise

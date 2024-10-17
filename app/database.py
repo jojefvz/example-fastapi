@@ -8,7 +8,7 @@ from .config import settings
 try:
     SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.database_username}:{settings.database_password}\
                                 @{settings.database_hostname}:{settings.database_port}/{settings.database_name}?sslmode=require"
-    print(f"Connecting to database at: {settings.database_hostname}:{settings.database_port} with user {settings.database_username}")
+    print(f"Connecting to database with URL: {SQLALCHEMY_DATABASE_URL}")
     
     engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
